@@ -24,7 +24,8 @@
         <td th:text="${tarea.nombre}">Mark</td>
         <td th:text="${tarea.fechaCreacion}">Otto</td>
         <td th:text="${tarea.fechaCaducidad}">@mdo</td>
-        <td th:href="@{/toDoList/editTarea/{idTarea}(idTarea = ${tarea.idTarea})}"><button>Edit</button></td>
+        <td> <a th:href="@{../toDoList/editTarea/{idTarea}(idTarea = ${tarea.idTarea})}"><button type="submit">Edit</button></a></td>
+        <td> <a th:href="@{../toDoList/eliminarTarea/{idTarea}(idTarea = ${tarea.idTarea})}"><button type="submit">Eliminar</button></a></td>
     </tr>
 
     </tbody>

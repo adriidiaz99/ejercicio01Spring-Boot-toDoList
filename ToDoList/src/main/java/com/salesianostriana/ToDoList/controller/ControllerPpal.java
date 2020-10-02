@@ -48,4 +48,10 @@ public class ControllerPpal {
         return "redirect:/toDoList/";
     }
 
+    @GetMapping("/eliminarTarea/{idTarea}")
+    public String editarTarea(@PathVariable long idTarea){
+        servicioTarea.deleteById(idTarea);
+        return "redirect:/toDoList/";
+    }
+
 }
