@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">nombre</th>
+        <th scope="col">Fecha de creacion</th>
+        <th scope="col">Fecha caduca</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tarea : ${tareas} " >
+        <td scope="row" th:text="${tarea.idTarea}">1</th>
+        <td th:text="${tarea.nombre}">Mark</td>
+        <td th:text="${tarea.fechaCreacion}">Otto</td>
+        <td th:text="${tarea.fechaCaducidad}">@mdo</td>
+        <td th:href="@{/toDoList/editTarea/{idTarea}(idTarea = ${tarea.idTarea})}"><button>Edit</button></td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
